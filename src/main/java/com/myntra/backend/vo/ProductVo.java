@@ -13,7 +13,20 @@ public class ProductVo {
     @Min(value = 10,message = "Minimum 10 price required")
     private int price;
 
-    @NotBlank(message = "minimum 1 Unit is required")
+
+    public String getProductImg() {
+        return productImg;
+    }
+
+    public void setProductImg(String productImg) {
+        this.productImg = productImg;
+    }
+
+    @NotBlank(message = "Please enter product image url")
+    private String productImg;
+
+
+    @NotBlank(message = "Please enter product name")
     private String productName;
 
     public ProductVo() {

@@ -15,6 +15,15 @@ public class Product {
     @JoinColumn(name = "supplierID")
     private Supplier supplier;
 
+    public String getProductImg() {
+        return productImg;
+    }
+
+    public void setProductImg(String productImg) {
+        this.productImg = productImg;
+    }
+
+    private String productImg;
     private int unit;
     private int price;
     private String productName;

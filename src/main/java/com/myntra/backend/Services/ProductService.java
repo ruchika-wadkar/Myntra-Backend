@@ -66,6 +66,7 @@ public class ProductService {
                 P1.setPrice(product.getPrice());
                 P1.setProductName(product.getProductName());
                 P1.setUnit(product.getUnit());
+                P1.setProductImg(product.getProductImg());
                 Optional<Supplier> supplier = suppliersRepository.findById(product.getSupplierID());
                 if(supplier.isEmpty()){
                     throw new SupplierException("Supplier not found");
