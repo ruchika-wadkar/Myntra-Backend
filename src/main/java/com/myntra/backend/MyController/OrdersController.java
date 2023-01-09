@@ -9,10 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.text.ParseException;
@@ -28,6 +25,11 @@ public class OrdersController {
     @GetMapping("/api/v1/order")
     ResponseEntity<List<Order>> getOrders() {
         return orderService.getOrders();
+    }
+
+    @GetMapping("/api/v1/order/{cid}")
+    ResponseEntity<List<Order>> getOrdersByCustomerId(@PathVariable int cid) {
+        return orderService.findByCustomerID(cid);
     }
 
     @PostMapping("/api/v1/order")

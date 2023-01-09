@@ -37,6 +37,10 @@ public class OrderService {
         return new ResponseEntity<>(orderRepository.findAll(), HttpStatus.OK);
     }
 
+    public ResponseEntity<List<Order>> findByCustomerID(int cid){
+        return new ResponseEntity<>(orderRepository.findByCustomerCustomerID(cid), HttpStatus.OK);
+    }
+
     public void addOrders(OrderVo order) throws ParseException {
        Order order1 = convertToOrder(order);
        if(customerRepository.findById(order.getCustomerID()).isEmpty())
