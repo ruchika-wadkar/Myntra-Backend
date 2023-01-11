@@ -9,7 +9,7 @@ import java.util.List;
 @Table(name = "suppliers_10708700")
 @SequenceGenerator(name="suppliers_id_seq", initialValue=401, allocationSize=100)
 public class Supplier {
-    @SequenceGenerator(name="suppliers_id_seq", initialValue=8001, allocationSize=100)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="suppliers_id_seq")
     @Id
     private int supplierID;
     private String supplierName;
